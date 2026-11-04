@@ -2,10 +2,12 @@ package com.gdghongik.commerce.application.order;
 
 import com.gdghongik.commerce.domain.order.Order;
 import com.gdghongik.commerce.domain.order.OrderRepository;
-import com.gdghongik.commerce.domain.product.Product;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Optional;
 import org.springframework.test.util.ReflectionTestUtils;
-
-import java.util.*;
 
 public class FakeOrderRepository implements OrderRepository {
 
@@ -14,10 +16,10 @@ public class FakeOrderRepository implements OrderRepository {
 
     @Override
     public Order save(Order order) {
-        if (order.getId()==null){
-            ReflectionTestUtils.setField(order,"id",++sequence);
+        if (order.getId() == null) {
+            ReflectionTestUtils.setField(order, "id", ++sequence);
         }
-        store.put(order.getId(),order);
+        store.put(order.getId(), order);
         return order;
     }
 
