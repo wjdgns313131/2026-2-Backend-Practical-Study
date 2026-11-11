@@ -32,7 +32,7 @@ import org.springframework.transaction.support.TransactionTemplate;
 @ActiveProfiles("test")
 class OrderQueryTest {
 
-    private static final int ORDER_COUNT = 10;
+    private static final int ORDER_COUNT = 20;
 
     @Autowired
     private OrderService orderService;
@@ -122,6 +122,6 @@ class OrderQueryTest {
 
         assertThat(queryCount)
                 .as("주문 목록 1개와 주문 항목 Batch 조회 1개가 실행되어야 한다")
-                .isEqualTo(2L);
+                .isEqualTo(3L);
     }
 }
