@@ -25,7 +25,7 @@ public class ProductRepositoryAdapter implements ProductRepository {
 
     @Override
     public Optional<Product> findByIdWithLock(Long id) {
-        return jpaRepository.findByIdWithLock(id);
+        return jpaRepository.findById(id);
     }
 
     @Override
